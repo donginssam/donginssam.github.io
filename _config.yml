@@ -1,0 +1,17 @@
+title: 이동인
+profession: 교사
+previous_profession: 前 소프트웨어 엔지니어
+description: 교실의 작은 불편을 코드로 풀어가는 교사 이동인입니다.
+lang: ko
+email: hello@donginssam.dev
+github_username: donginssam
+
+url: ""
+baseurl: ""
+
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor

@@ -1,0 +1,78 @@
+:root{--blue:#1A56DB; --red:#E8412F; --yellow:#FFC933; --green:#1E9E5A; --ink:#14161A; --white:#fff}
+*{box-sizing:border-box}
+body{margin:0; background:var(--white); color:var(--ink); font:400 17px/1.7 "Pretendard Variable",Pretendard,system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink); outline-offset:3px}
+.wrap{max-width:1160px; margin:0 auto; padding:0 24px}
+
+.site-header{display:flex; justify-content:space-between; align-items:center; gap:32px; min-height:176px; padding:24px; max-width:1160px; margin:0 auto}
+.profile-name{font:400 clamp(64px,10vw,128px)/1 "Black Han Sans",sans-serif; letter-spacing:-.04em}
+.profile-role{display:flex; flex-direction:column; gap:4px; margin:0; line-height:1.35}
+.profile-role strong{font-size:28px; font-weight:800}
+.profile-role span{font-size:20px; font-weight:600; color:#6b707a}
+.site-header a{text-decoration:none}
+.site-header a:hover{text-decoration:underline; text-underline-offset:6px; text-decoration-thickness:3px}
+
+/* 히어로: 네 가지 색면이 문장을 받친다 */
+.hero{display:grid; grid-template-columns:repeat(12,1fr); max-width:1160px; margin:8px auto 0; padding:0 24px}
+.hero .title{grid-column:1/9; background:var(--blue); color:#fff; padding:56px 48px 48px}
+.hero .title h1{font:400 clamp(44px,8vw,112px)/1.05 "Black Han Sans",sans-serif; margin:0; letter-spacing:-.02em}
+/* 소수 픽셀로 나뉜 행의 끝에서도 흰 바탕이 비치지 않게 한다. */
+.hero .side{grid-column:9/13; display:grid; grid-template-rows:1fr 1fr 1fr; background:var(--green)}
+.hero .side div{padding:20px 24px; font-weight:700; font-size:18px; display:flex; align-items:flex-end}
+.s1{background:var(--red); color:#fff}
+.s2{background:var(--yellow)}
+.s3{background:var(--green); color:#fff}
+.hero .intro{grid-column:1/13; background:var(--ink); color:#fff; padding:28px 48px; font-size:19px; display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:center}
+.hero .intro p{margin:0; max-width:36em; white-space:pre-line}
+.btn{display:inline-block; padding:12px 24px; background:var(--yellow); color:var(--ink); font-weight:800; text-decoration:none}
+.btn:hover{background:#fff}
+
+/* 자격 배지: 흰 받침 위에 그대로 올린다 */
+.certs{padding:88px 0 40px}
+h2{font:400 clamp(32px,4.4vw,52px)/1.2 "Black Han Sans",sans-serif; margin:0 0 12px}
+.sub{margin:0 0 36px; max-width:36em}
+.plates{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.plate{border:3px solid var(--ink); padding:20px; display:flex; flex-direction:column; justify-content:space-between; min-height:300px; position:relative; text-decoration:none}
+.plate:hover h3,.plate:focus-visible h3{text-decoration:underline; text-underline-offset:4px}
+.plate::before{content:""; position:absolute; left:-3px; top:-3px; width:36px; height:36px}
+.plate:nth-child(1)::before{background:var(--blue)}
+.plate:nth-child(2)::before{background:var(--red)}
+.plate:nth-child(3)::before{background:var(--green)}
+.plate .img{flex:1; display:grid; place-items:center; padding:12px 0}
+.plate .img.hex img{height:190px; width:auto}
+.plate .img.wide img{width:100%; aspect-ratio:3.2/1; object-fit:cover}
+.plate h3{margin:0; font-size:19px; line-height:1.4}
+
+.about{display:grid; grid-template-columns:1fr 1fr; gap:48px; padding:72px 0}
+.about p{margin:0 0 16px; max-width:34em; white-space:pre-line}
+.list{list-style:none; margin:0; padding:0}
+.list li{padding:16px 0; border-top:3px solid var(--ink); display:flex; justify-content:space-between; gap:16px; font-weight:700}
+.list li:last-child{border-bottom:3px solid var(--ink)}
+.list span{font-weight:400}
+
+.site-footer{background:var(--yellow); padding:40px 24px}
+.site-footer div{max-width:1160px; margin:0 auto; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-weight:700; font-size:20px}
+.site-footer a{text-decoration:none}
+.site-footer a:hover{text-decoration:underline}
+
+@media (max-width:860px){
+  .hero .title{grid-column:1/13; padding:36px 24px}
+  .hero .side{grid-column:1/13; grid-template-rows:none; grid-template-columns:repeat(3,1fr)}
+  .hero .side div{min-height:84px; font-size:15px}
+  .hero .intro{padding:24px}
+  .plates{grid-template-columns:1fr}
+  .plate{min-height:0}
+  .about{grid-template-columns:1fr; gap:32px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .s1,.s2,.s3{transform-origin:left; animation:grow .7s cubic-bezier(.2,.8,.2,1) backwards}
+  .s2{animation-delay:.12s}
+  .s3{animation-delay:.24s}
+  @keyframes grow{from{transform:scaleX(0)}}
+}
+@media (max-width:600px){
+  .site-header{flex-direction:column; align-items:flex-start; gap:16px; min-height:0; padding:28px 24px}
+  .profile-role strong{font-size:22px}
+  .profile-role span{font-size:17px}
+}

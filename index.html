@@ -1,0 +1,34 @@
+---
+layout: default
+---
+{% assign p = site.data.profile %}
+<div class="hero">
+  <div class="title"><h1>{{ p.hero.title_line1 }}<br>{{ p.hero.title_line2 }}</h1></div>
+  <div class="side">
+    {% for block in p.hero.blocks %}<div class="s{{ forloop.index }}">{{ block }}</div>{% endfor %}
+  </div>
+  <div class="intro">
+    <p>{{ p.hero.intro }}</p>
+    <a class="btn" href="#contact">{{ p.hero.cta }}</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="certs" id="certs">
+    <h2>{{ p.certs.title }}</h2>
+    <p class="sub">{{ p.certs.sub }}</p>
+    <div class="plates">
+      {% for badge in site.data.badges %}{% include badge.html badge=badge %}{% endfor %}
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div>
+      <h2>{{ p.about.title }}</h2>
+      {% for para in p.about.paragraphs %}<p>{{ para }}</p>{% endfor %}
+    </div>
+    <ul class="list">
+      {% for skill in p.about.skills %}<li>{{ skill.name }} <span>{{ skill.detail }}</span></li>{% endfor %}
+    </ul>
+  </section>
+</div>

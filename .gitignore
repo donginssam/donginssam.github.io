@@ -1,0 +1,9 @@
+.claude
+.codex
+_site/
+.jekyll-cache/
+.sass-cache/
+Gemfile.lock
+vendor/
+.DS_Store
+/.local-preview/

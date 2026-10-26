@@ -1,0 +1,6 @@
+<a class="plate" href="{{ include.badge.url }}" aria-label="{{ include.badge.name }} 인증서 보기">
+  <div class="img {{ include.badge.kind }}">
+    <img src="{{ include.badge.image | relative_url }}" alt="{{ include.badge.alt }}" loading="lazy">
+  </div>
+  <h3>{{ include.badge.name }}</h3>
+</a>

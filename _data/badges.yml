@@ -1,0 +1,17 @@
+- name: AWS Solutions Architect Associate
+  url: https://www.credly.com/badges/912daf71-1690-4aef-b19f-afb109d1ad70
+  image: /assets/img/badges/aws-saa.png
+  alt: AWS Certified Solutions Architect - Associate 배지
+  kind: hex
+
+- name: Google Certified Educator Level 1
+  url: https://edu.google.accredible.com/0ee61f96-2484-41b1-a099-cb72415d2817
+  image: /assets/img/badges/gce-l1.png
+  alt: Google for Education Certified Educator Level 1 배지
+  kind: wide
+
+- name: Google Certified Educator Level 2
+  url: https://edu.google.accredible.com/9238b3ab-5529-4f35-9e05-ef763ee827e9
+  image: /assets/img/badges/gce-l2.png
+  alt: Google for Education Certified Educator Level 2 배지
+  kind: wide
